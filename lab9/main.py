@@ -62,16 +62,17 @@ def cgm(x0, eps, A, B):
     
 def main():
 
-    eps = 0.1
+    eps = 0.001
     # A = [[2, 1],[1, 5]]
     # B = [16, 20]
     # X0 = np.array([4.0, 3.0])
     A = [[2, 1],[1, 5]]
     B = [16, 20]
-    X0 = np.array([4.0, 3.0])
+    X0 = np.array([-4.0, -3.0])
 
     if X0[0] < 0 or X0[1] < 0:
-        print("X0 should be positive.")
+        print("X0 values should be positive.")
+        exit(1)
 
     # Check if X0 matches constraints
     if ( A[0][0] * X0[0] + A[0][1] * X0[1] ) <= B[0] and  (A[1][0] * X0[0] + A[1][1] * X0[1]) <= B[1]:
