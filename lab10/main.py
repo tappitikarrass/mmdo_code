@@ -1,8 +1,12 @@
-from method import method, D
+from method import method
 
 
 def main():
     invest = 8
+
+    if invest < 0:
+        print("Invest count must be 0 or higher")
+
     table = [
         # [[2, 0.5], [2, 0.4], [4, 1.4], [5, 1.5], [3, 0.8]],
         # [[3, 0.8], [4, 0.8], [1, 0.4], [2, 0.6], [3, 0.8]],
