@@ -61,18 +61,19 @@ def cgm(x0, eps, A, B):
         print('\n')
     
 def main():
-    print("\n << The Conditional Gradient Method >> \n")
-    print("∇X(x0) = ", gradient(), "\n")
+
     eps = 0.01
     # A = [[2, 1],[1, 5]]
     # B = [16, 20]
     # X0 = np.array([4.0, 3.0])
     A = [[2, 1],[1, 5]]
     B = [16, 20]
-    X0 = np.array([3.0, 4.0])
+    X0 = np.array([4.0, 3.0])
 
     # Check if X0 matches constraints
     if ( A[0][0] * X0[0] + A[0][1] * X0[1] ) <= B[0] and  (A[1][0] * X0[0] + A[1][1] * X0[1]) <= B[1]:
+        print("\n << The Conditional Gradient Method >> \n")
+        print("∇X(x0) = ", gradient(), "\n")
         cgm(X0, eps, A, B)
     else:
         print("X0 values does not satisfy constraints")
